@@ -19,7 +19,7 @@ button_frame.pack(side="bottom", pady=10)
 score_label = tk.Label(root, text=f"Очки пользователя: {user_score} | Очки компьютера: {computer_score}")
 score_label.pack(pady=10)
 
-start_image = tk.PhotoImage(file="./pics/begin.png")
+start_image = tk.PhotoImage(file="./begin.png")
 start_label = tk.Label(root, image=start_image)
 start_label.image = start_image
 start_label.pack(pady=10)
@@ -41,17 +41,17 @@ def image_score(user_choice, computer_choice):
     if user_choice == "Сотрудничать" and computer_choice == "Сотрудничать":
         user_score += 2
         computer_score += 2
-        image = "./pics/coopcoop.png"
+        image = "./coopcoop.png"
     elif user_choice == "Сотрудничать" and computer_choice == "Мухлевать":
         user_score -= 1
         computer_score += 3
-        image = "./pics/coopcheat.png"
+        image = "./coopcheat.png"
     elif user_choice == "Мухлевать" and computer_choice == "Сотрудничать":
         user_score += 3
         computer_score -= 1
-        image = "./pics/cheatcoop.png"
+        image = "./cheatcoop.png"
     elif user_choice == "Мухлевать" and computer_choice == "Мухлевать":
-        image = "./pics/cheatcheat.png"
+        image = "./cheatcheat.png"
 
     for widget in root.winfo_children():
         if isinstance(widget, tk.Label) and widget != score_label:
